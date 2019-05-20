@@ -1,0 +1,9 @@
+.*.swp
+.vim/.netrwhist
+.idea/
+build/
+.ipynb_checkpoints/
+*.npy
+*.npz
+*.caffemodel
+*.prototxt

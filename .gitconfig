@@ -1,0 +1,41 @@
+[user]
+	    name = Andrew Look
+[include]
+        path = ~/.gitconfig.dotfiles_profile
+[merge]
+        log = true
+	tool = opendiff
+[color]
+        branch = auto
+        diff = auto
+        status = auto
+        interactive = auto
+[color "branch"]
+        current = yellow reverse
+        local = yellow 
+        remote = green
+[tcolor "diff"]
+        meta = yellow bold
+        frag = magenta bold
+        old = red bold
+        new = green bold
+[color "status"]
+        added = yellow
+        changed = green
+        untracked = cyan
+[core]
+        excludesfile = ~/.gitignore
+        editor = vim
+[push]
+        default = tracking
+[alias]
+        glog = log --graph --decorate --all --pretty=oneline --abbrev-commit
+        blog = log --graph --decorate --all --pretty=oneline --abbrev-commit --source
+        alog = log --graph --decorate --all --pretty='format:%h %Cred %ad %Cgreen %cn %d %Creset %s' --color --date=short 
+        desc = branch --edit-description
+        show-files = show --name-only
+
+        record = commit --interactive
+        st = status
+[help]
+        autocorrect = 10
