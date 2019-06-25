@@ -220,3 +220,43 @@ export WORKDIR_WEBSITE="${DROPBOX_PROJECTS}/artx/sharex/my-website"
 
 alias cdmysite="cd ${WORKDIR_WEBSITE}"
 alias cdwebapp="cd ${HOME}/code/PLATO/webapp"
+export PATH="/opt/conda/miniconda3/bin:/opt/conda/miniconda2/bin:$PATH"
+
+eval "$(direnv hook bash)"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/opt/google/google-cloud-sdk/path.bash.inc' ]; then . '/opt/google/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/opt/google/google-cloud-sdk/completion.bash.inc' ]; then . '/opt/google/google-cloud-sdk/completion.bash.inc'; fi
+
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Using `nvm` to manage `node` versions
+# adding the following to your `~/.bash_profile` (on MacOS) will tell nvm to automatically switch to the 
+# node version defined in the `.nvmrc` file if it sees one when you switch directories.
+
+# switch to the nvm version defined by .nvmrc
+enter_directory() {
+if [[ $PWD == $PREV_PWD ]]; then
+    return
+fi
+PREV_PWD=$PWD
+if [[ -f ".nvmrc" ]]; then
+    nvm use
+    NVM_DIRTY=true
+elif [[ $NVM_DIRTY = true ]]; then
+    nvm use default
+    NVM_DIRTY=false
+fi
+}
+export PROMPT_COMMAND="enter_directory; ${PROMPT_COMMAND}"
+
+
+#> **Note:** this snippet works great when manually cd-ing, it apparently
+#> _doesn't_ seem to work when cd-ing happens via the Makefile and/or as part
+#> of the Tmux session. see here for the fix:
+#> - https://github.com/Plato-Design/webapp/pull/1161

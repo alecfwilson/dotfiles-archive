@@ -1,7 +1,5 @@
 [user]
-       name = Andrew Look
-       email = look@pinterest.com
+       name = Alec Wilson
+       email = alec@useplato.com
 [github]
-       user = pinlook
-[ghi]
-       token = !security find-internet-password -a pinlook -s github.com -l 'ghi token' -w
+       user = alecfwilson

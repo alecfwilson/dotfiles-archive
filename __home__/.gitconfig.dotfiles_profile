@@ -1,9 +1,5 @@
 [user]
-       name = Andrew Look
-       email = andrew.m.look@gmail.com
+ 	name = Alec Wilson
+	email = alec.f.wilson@gmail.com
 [github]
-       user = andrewlook
-[ghi]
-       token = !security find-internet-password -a andrewlook -s github.com -l 'ghi token' -w
-[core]
-    editor = /Applications/MacVim.app/Contents/MacOS/Vim
+	user = alecfwilson

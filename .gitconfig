@@ -1,5 +1,5 @@
 [user]
-	    name = Andrew Look
+	name = Alec Wilson
 [include]
         path = ~/.gitconfig.dotfiles_profile
 [merge]
