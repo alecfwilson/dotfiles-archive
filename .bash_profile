@@ -73,6 +73,19 @@ alias pomobreak="open focus://break?minutes=5"
 # make sure DOTFILES_OS and DOTFILES_PROFILE are set.
 [[ -f ~/.dotfiles_env ]] && . ~/.dotfiles_env
 
+# Homebrew Completions
+# HOMEBREW_PREFIX=$(brew --prefix)
+# if type brew &>/dev/null; then
+#   for COMPLETION in "$HOMEBREW_PREFIX"/etc/bash_completion.d/*
+#   do
+#     [[ -f $COMPLETION ]] && source "$COMPLETION"
+#   done
+#   if [[ -f ${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh ]];
+#   then
+#     source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
+#   fi
+# fi
+
 # default settings that may get overriden by profiles...
 export CONDA_HOME=/opt/conda
 
@@ -91,8 +104,9 @@ then
     export DYLD_LIBRARY_PATH="$CUDA_HOME/lib"
     export PATH="$CUDA_HOME/bin:$PATH"
     export LD_LIBRARY_PATH=$CUDA_HOME/lib
+    [ -f /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash ] && . /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
     
-    . /usr/local/etc/bash_completion
+    [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
     ## ignore this conditional and just assume im using bash?
     #if [ -f $(brew --prefix)/etc/bash_completion ]; then
     #fi
