@@ -37,5 +37,11 @@
 
         record = commit --interactive
         st = status
+	co = checkout
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+	ci = commit
+	br = branch
+	type = cat-file -t
+	dump = cat-file -p
 [help]
         autocorrect = 10

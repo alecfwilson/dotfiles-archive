@@ -274,3 +274,16 @@ export PROMPT_COMMAND="enter_directory; ${PROMPT_COMMAND}"
 #> _doesn't_ seem to work when cd-ing happens via the Makefile and/or as part
 #> of the Tmux session. see here for the fix:
 #> - https://github.com/Plato-Design/webapp/pull/1161
+
+# aliases
+alias gs='git status '
+alias ga='git add '
+alias gb='git branch '
+alias gc='git commit'
+alias gd='git diff'
+alias go='git checkout '
+alias gk='gitk --all&'
+alias gx='gitx --all'
+
+alias got='git '
+alias get='git '
