@@ -43,5 +43,6 @@
 	br = branch
 	type = cat-file -t
 	dump = cat-file -p
+	f = fetch
 [help]
         autocorrect = 10

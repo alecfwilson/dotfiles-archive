@@ -287,3 +287,8 @@ alias gx='gitx --all'
 
 alias got='git '
 alias get='git '
+
+# snapshots, remove later
+alias dka='docker kill $(docker ps -q)  && . venv3/bin/activate'
+alias cs='. venv3/bin/activate && rm -rf docker/postgres/data/* && ./scripts/docker_postgres.sh run-local'
+alias isd='. venv3/bin/activate&& psql --user platoapp --host 127.0.0.1 -d platoapp_dev < docker/postgres/latest-dump'
