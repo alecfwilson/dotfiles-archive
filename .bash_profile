@@ -97,7 +97,7 @@ then
     echo "using OS=macos"
 
     export PATH=$PATH:/Applications/Araxis\ Merge.app/Contents/Utilities
-    export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+    # export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
     # from tensorflow setup GPU on mac...
     export CUDA_HOME=/usr/local/cuda
@@ -164,13 +164,13 @@ fi
 # - JAVA_HOME is set per-OS
 #############################
 
-if [ -n "${JAVA_HOME+set}" ]; then
-    echo '$JAVA_HOME is already set'
-else
-    echo '$JAVA_HOME must be set' && exit 1
-fi
-export PATH="$PATH:$JAVA_HOME/bin"
-export M2_HOME="/opt/apache/maven/latest"
+# if [ -n "${JAVA_HOME+set}" ]; then
+#     echo '$JAVA_HOME is already set'
+# else
+#     echo '$JAVA_HOME must be set' && exit 1
+# fi
+# export PATH="$PATH:$JAVA_HOME/bin"
+# export M2_HOME="/opt/apache/maven/latest"
 
 
 
@@ -236,7 +236,7 @@ alias cdmysite="cd ${WORKDIR_WEBSITE}"
 alias cdwebapp="cd ${HOME}/code/PLATO/webapp"
 export PATH="/opt/conda/miniconda3/bin:/opt/conda/miniconda2/bin:$PATH"
 
-eval "$(direnv hook bash)"
+# eval "$(direnv hook bash)"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/opt/google/google-cloud-sdk/path.bash.inc' ]; then . '/opt/google/google-cloud-sdk/path.bash.inc'; fi

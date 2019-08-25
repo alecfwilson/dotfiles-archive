@@ -9,13 +9,18 @@ I recommend reading `bootstrap.py` to understand how it works - it basically ren
 ## Example result
 
 ```
-Andrews-MacBook-Pro:.dotfiles alook$ ls -al ~ | grep dotfiles
-lrwxr-xr-x     1 alook  staff       23 Aug  9  2015 .bash_profile -> .dotfiles/.bash_profile
-lrwxr-xr-x     1 alook  staff       17 Aug  9  2015 .bashrc -> .dotfiles/.bashrc
-drwxr-xr-x    13 alook  staff      442 Dec 21 19:32 .dotfiles
-lrwxr-xr-x     1 alook  staff       20 Aug  9  2015 .gitconfig -> .dotfiles/.gitconfig
-lrwxr-xr-x     1 alook  staff       33 Nov 20 09:39 .tmux.conf -> /Users/alook/.dotfiles/.tmux.conf
-lrwxr-xr-x     1 alook  staff       16 Aug  9  2015 .vimrc -> .dotfiles/.vimrc
+Alecs-MacBook-Air  .dotfiles (master)  $ ls -al ~ | grep dotfiles
+lrwxr-xr-x   1 alecfwilson  staff     42 Aug 23 12:59 .bash_profile@ -> /Users/alecfwilson/.dotfiles/.bash_profile
+drwxr-xr-x  18 alecfwilson  staff    576 Aug 23 12:56 .dotfiles/
+-rw-r--r--   1 alecfwilson  staff     67 Aug 23 12:59 .dotfiles_env
+lrwxr-xr-x   1 alecfwilson  staff     39 Aug 23 12:59 .gitconfig@ -> /Users/alecfwilson/.dotfiles/.gitconfig
+lrwxr-xr-x   1 alecfwilson  staff     65 Aug 23 12:59 .gitconfig.dotfiles_profile@ -> /Users/alecfwilson/.dotfiles/__home__/.gitconfig.dotfiles_profile
+lrwxr-xr-x   1 alecfwilson  staff     39 Aug 23 12:59 .gitignore@ -> /Users/alecfwilson/.dotfiles/.gitignore
+lrwxr-xr-x   1 alecfwilson  staff     39 Aug 23 12:59 .ideavimrc@ -> /Users/alecfwilson/.dotfiles/.ideavimrc
+lrwxr-xr-x   1 alecfwilson  staff     39 Aug 23 12:59 .tmux.conf@ -> /Users/alecfwilson/.dotfiles/.tmux.conf
+lrwxr-xr-x   1 alecfwilson  staff     61 Aug 23 12:59 .tmux.conf.dotfiles_os@ -> /Users/alecfwilson/.dotfiles/__macos__/.tmux.conf.dotfiles_os
+lrwxr-xr-x   1 alecfwilson  staff     35 Aug 23 12:59 .vimrc@ -> /Users/alecfwilson/.dotfiles/.vimrc
+lrwxr-xr-x   1 alecfwilson  staff     35 Aug 23 12:59 .zshrc@ -> /Users/alecfwilson/.dotfiles/.zshrc
 ```
 
 ## Alternatives
