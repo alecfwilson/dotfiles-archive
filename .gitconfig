@@ -26,6 +26,7 @@
 [core]
         excludesfile = ~/.gitignore
         editor = vim
+        whitespace = fix,space-before-tab,tab-in-indent,trailing-space
 [push]
         default = tracking
 [alias]
@@ -43,6 +44,5 @@
 	br = branch
 	type = cat-file -t
 	dump = cat-file -p
-	f = fetch
 [help]
         autocorrect = 10

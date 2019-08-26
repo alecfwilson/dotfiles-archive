@@ -3,6 +3,21 @@
 # leave bashrc for any OS-specific stuff, i guess?
 #[[ -f ~/.bashrc ]] && . ~/.bashrc
 
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+export HISTFILESIZE=999999
+export HISTSIZE=999999
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
 
 DEFAULT_GIT_REMOTE=origin
 
@@ -236,7 +251,10 @@ alias cdmysite="cd ${WORKDIR_WEBSITE}"
 alias cdwebapp="cd ${HOME}/code/PLATO/webapp"
 export PATH="/opt/conda/miniconda3/bin:/opt/conda/miniconda2/bin:$PATH"
 
-# eval "$(direnv hook bash)"
+eval "$(direnv hook bash)"
+
+# brew completions
+source "$(brew --prefix)/etc/bash_completion"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/opt/google/google-cloud-sdk/path.bash.inc' ]; then . '/opt/google/google-cloud-sdk/path.bash.inc'; fi
@@ -269,6 +287,9 @@ fi
 }
 export PROMPT_COMMAND="enter_directory; ${PROMPT_COMMAND}"
 
+# brew install z
+. /usr/local/etc/profile.d/z.sh
+
 
 #> **Note:** this snippet works great when manually cd-ing, it apparently
 #> _doesn't_ seem to work when cd-ing happens via the Makefile and/or as part
@@ -287,6 +308,15 @@ alias gx='gitx --all'
 
 alias got='git '
 alias get='git '
+
+# nice directory listing
+alias l="ls -Glah"
+
+# nice directory tree listing showing permissions, user, group and size (human readable)
+alias t="tree -L 1 --dirsfirst -shugp"
+# nice directory tree listing, but just 2 levels
+alias tt="tree -L 2 --dirsfirst"
+
 
 # snapshots, remove later
 alias dka='docker kill $(docker ps -q)  && . venv3/bin/activate'
