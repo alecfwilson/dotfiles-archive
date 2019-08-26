@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# source other dotfiles
+for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
+    [ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;
+
 # leave bashrc for any OS-specific stuff, i guess?
 #[[ -f ~/.bashrc ]] && . ~/.bashrc
 
@@ -72,18 +78,6 @@ set -o vi
 export PATH=$PATH:~/.dotfiles/bin
 export PATH=~/bin:~/scripts/:~/private-scripts:$PATH
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-
-alias la='ls -al'
-alias ll='ls -lth'
-alias ls='ls -F'
-alias rm='rm -i'
-alias wip='git add . && git commit -m WIP && git push ${DEFAULT_GIT_REMOTE} $(just_git_branch)'
-
-
-alias pomo25="open focus://focus?minutes=25"
-alias pomo10="open focus://focus?minutes=10"
-alias pomo5="open focus://focus?minutes=5"
-alias pomobreak="open focus://break?minutes=5"
 
 # make sure DOTFILES_OS and DOTFILES_PROFILE are set.
 [[ -f ~/.dotfiles_env ]] && . ~/.dotfiles_env
@@ -247,8 +241,6 @@ export DROPBOX_ARCHIVE="${DROPBOX}/_Archive"
 export DROPBOX_WORKING="${DROPBOX}/_Working"
 export WORKDIR_WEBSITE="${DROPBOX_PROJECTS}/artx/sharex/my-website"
 
-alias cdmysite="cd ${WORKDIR_WEBSITE}"
-alias cdwebapp="cd ${HOME}/code/PLATO/webapp"
 export PATH="/opt/conda/miniconda3/bin:/opt/conda/miniconda2/bin:$PATH"
 
 eval "$(direnv hook bash)"
@@ -296,29 +288,3 @@ export PROMPT_COMMAND="enter_directory; ${PROMPT_COMMAND}"
 #> of the Tmux session. see here for the fix:
 #> - https://github.com/Plato-Design/webapp/pull/1161
 
-# aliases
-alias gs='git status '
-alias ga='git add '
-alias gb='git branch '
-alias gc='git commit'
-alias gd='git diff'
-alias go='git checkout '
-alias gk='gitk --all&'
-alias gx='gitx --all'
-
-alias got='git '
-alias get='git '
-
-# nice directory listing
-alias l="ls -Glah"
-
-# nice directory tree listing showing permissions, user, group and size (human readable)
-alias t="tree -L 1 --dirsfirst -shugp"
-# nice directory tree listing, but just 2 levels
-alias tt="tree -L 2 --dirsfirst"
-
-
-# snapshots, remove later
-alias dka='docker kill $(docker ps -q)  && . venv3/bin/activate'
-alias cs='. venv3/bin/activate && rm -rf docker/postgres/data/* && ./scripts/docker_postgres.sh run-local'
-alias isd='. venv3/bin/activate&& psql --user platoapp --host 127.0.0.1 -d platoapp_dev < docker/postgres/latest-dump'
