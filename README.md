@@ -5,7 +5,6 @@
 I recommend reading `bootstrap.py` to understand how it works - it basically renames your existing `.bash_profile` (or any files in here) to `<filename>.bak` and then replaces `.bash_profile` with a symlink to the one in this folder. That way. when you add to `~/.bash_profile`, you can `cd ~/.dotfiles && git add . && git commit -m "updated my bash profile" && git push origin master`.
 
 
-
 ## Example result
 
 ```
@@ -22,6 +21,17 @@ lrwxr-xr-x   1 alecfwilson  staff     61 Aug 23 12:59 .tmux.conf.dotfiles_os@ ->
 lrwxr-xr-x   1 alecfwilson  staff     35 Aug 23 12:59 .vimrc@ -> /Users/alecfwilson/.dotfiles/.vimrc
 lrwxr-xr-x   1 alecfwilson  staff     35 Aug 23 12:59 .zshrc@ -> /Users/alecfwilson/.dotfiles/.zshrc
 ```
+
+## To dos
+* Set up Sublime Preferences
+* Set up Spectacle Preferences
+* Set up Snip Preferences
+* Create login items
+* Create Alfred Preferences
+* Create Dropbox Preferences
+* Login to chrome, etc
+* Create iterm prefs
+* Mess with color schemes
 
 ## Alternatives
 
