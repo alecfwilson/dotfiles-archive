@@ -38,3 +38,33 @@ lrwxr-xr-x   1 alecfwilson  staff     35 Aug 23 12:59 .zshrc@ -> /Users/alecfwil
 dotfile management resources:
 - big list of people doing it different ways: https://dotfiles.github.io/
 - fairly opinionated way of doing it, that looked reasonable to me (been meaning to try it) https://www.atlassian.com/git/tutorials/dotfiles
+
+
+## Some random output that will be useful when I get to it later
+```
+alecfwilson-air  Application Support $ defaults read com.mowglii.ItsycalApp
+{
+    ClockFormat = "EEEE y-MM-dd";
+    HideIcon = 1;
+    "NSWindow Frame SUUpdateAlert" = "450 363 620 392 0 0 1440 877 ";
+    SUHasLaunchedBefore = 1;
+    SULastCheckTime = "2019-08-26 16:49:42 +0000";
+    SelectedCalendars =     (
+        "67157E2E-7448-4FD2-815E-97B01981792D"
+    );
+    ShowDayOfWeekInIcon = 1;
+    ShowEventDays = 7;
+    ShowMonthInIcon = 1;
+    ShowWeeks = 1;
+    SizePreference = 1;
+    UseOutlineIcon = 1;
+}
+
+alecfwilson-air  Application Support $ defaults read com.tencent.snip
+{
+    autosavepath = "/Users/alecfwilson/Library/Containers/com.tencent.snip/Data/Downloads";
+    autostart = 1;
+    firstrunapp = 0;
+    imageresolution = 1;
+}
+```

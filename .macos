@@ -870,7 +870,9 @@ defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool t
 
 # Set up my preferred keyboard shortcuts
 # TODO: CREATE
-# cp -r init/spectacle.json ~/Library/Application\ Support/Spectacle/Shortcuts.json 2> /dev/null
+cp -r init/spectacle.json ~/Library/Application\ Support/Spectacle/Shortcuts.json 2> /dev/null
+
+defaults write com.divisiblebyzero.Spectacle StartAtLogin -bool true
 
 ###############################################################################
 # Transmission.app                                                            #
@@ -930,9 +932,9 @@ for app in "Activity Monitor" \
 	"Mission Control" \
 	"Opera" \
 	"Photos" \
-	"Quicktime Player"
+	"Quicktime Player" \
 	"Safari" \
-	# "Spectacle" \
+	"Spectacle" \
 	"SystemUIServer" \
 	"Terminal" \
 	"Transmission" \
