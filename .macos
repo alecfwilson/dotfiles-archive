@@ -872,8 +872,6 @@ defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool t
 # TODO: CREATE
 cp -r init/spectacle.json ~/Library/Application\ Support/Spectacle/Shortcuts.json 2> /dev/null
 
-defaults write com.divisiblebyzero.Spectacle StartAtLogin -bool true
-
 ###############################################################################
 # Transmission.app                                                            #
 ###############################################################################
@@ -910,6 +908,18 @@ defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
 
 # Randomize port on launch
 defaults write org.m0k.transmission RandomPort -bool true
+
+###############################################################################
+# Login Items                                                                 #
+###############################################################################
+defaults write com.tencent.Snip StartAtLogin -bool true
+defaults write com.divisiblebyzero.Spectacle StartAtLogin -bool true
+defaults write com.runningwithcrayons.Alfred-Preferences StartAtLogin -bool true
+defaults write com.apple.Messages StartAtLogin -bool true
+defaults write com.google.Chrome StartAtLogin -bool true
+defaults write com.mowglii.ItsycalApp StartAtLogin -bool true
+defaults write com.mediaatelier.CheatSheet StartAtLogin -bool true
+defaults write com.googlecode.iterm2 StartAtLogin -bool true
 
 ###############################################################################
 # Kill affected applications                                                  #

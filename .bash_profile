@@ -9,17 +9,6 @@ unset file;
 # leave bashrc for any OS-specific stuff, i guess?
 #[[ -f ~/.bashrc ]] && . ~/.bashrc
 
-# don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
-HISTCONTROL=ignoreboth
-
-# append to the history file, don't overwrite it
-shopt -s histappend
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-export HISTFILESIZE=999999
-export HISTSIZE=999999
-
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
@@ -72,8 +61,6 @@ PROMPT_TITLE='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/~}\007"'
 export PROMPT_COMMAND="${PROMPT_TITLE}; ${PROMPT_COMMAND}"
 
 export PS1='\h \[\e[0;32m\] \W\[\e[0;36m\]$(print_symlink)\[\e[0;31m\]$(parse_git_branch)\[\e[0m\] $ '
-export EDITOR=vim
-set -o vi
 
 export PATH=$PATH:~/.dotfiles/bin
 export PATH=~/bin:~/scripts/:~/private-scripts:$PATH
@@ -243,12 +230,6 @@ export PKG_CONFIG_PATH="${PKG_CONFIG_PATH}:/usr/local/opt/libffi/lib/pkgconfig"
 #
 # Working paths
 #
-export DROPBOX="${HOME}/Dropbox"
-export DROPBOX_PROJECTS="${DROPBOX}/_Projects"
-export DROPBOX_ARCHIVE="${DROPBOX}/_Archive"
-export DROPBOX_WORKING="${DROPBOX}/_Working"
-export WORKDIR_WEBSITE="${DROPBOX_PROJECTS}/artx/sharex/my-website"
-
 export PATH="/opt/conda/miniconda3/bin:/opt/conda/miniconda2/bin:$PATH"
 
 eval "$(direnv hook bash)"
@@ -263,6 +244,7 @@ if [ -f '/opt/google/google-cloud-sdk/path.bash.inc' ]; then . '/opt/google/goog
 if [ -f '/opt/google/google-cloud-sdk/completion.bash.inc' ]; then . '/opt/google/google-cloud-sdk/completion.bash.inc'; fi
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
