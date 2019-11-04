@@ -117,7 +117,7 @@ then
 
     # macvim loading stuff:
     # - https://github.com/altercation/solarized/issues/60
-    alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
+    # alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
 
 elif [ "$DOTFILES_OS" == "linux" ]
 then
